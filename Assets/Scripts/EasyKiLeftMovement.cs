@@ -13,6 +13,8 @@ public class EasyKiLeftMovement : PaddleMovement
 
     private void Update()
     {
+        if (PauseMenu.IsPaused) return;
+
         if (_ball.velocity.x < 0)
         {
             if (_ball.position.y > transform.position.y) _rb.AddForce(Vector2.up * Speed);

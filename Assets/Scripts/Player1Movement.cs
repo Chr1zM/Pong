@@ -8,6 +8,8 @@ public class Player1Movement : PaddleMovement
 
     private void Update()
     {
+        if (PauseMenu.IsPaused) return;
+
         if (Input.GetKey(KeyCode.W)) _dir = Vector2.up;
         else if (Input.GetKey(KeyCode.S)) _dir = Vector2.down;
         else _dir = Vector2.zero;

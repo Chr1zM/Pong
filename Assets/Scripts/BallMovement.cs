@@ -20,7 +20,7 @@ public class BallMovement : MonoBehaviour
         AddStartingForce();
     }
 
-    private void AddStartingForce()
+    public void AddStartingForce()
     {
         var x = Random.value < 0.5f ? -1.0f : 1.0f;
         var y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) : Random.Range(0.5f, 1.0f);
@@ -33,10 +33,9 @@ public class BallMovement : MonoBehaviour
         _rb.AddForce(force);
     }
 
-    public void ResetBall()
+    public void ResetPosition()
     {
         _rb.position = Vector2.zero;
         _rb.velocity = Vector2.zero;
-        AddStartingForce();
     }
 }
